@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "vite-plugin-static-copy": "^2.0.0",
     "vue": "^3.5.10"
   },
   "devDependencies": {
