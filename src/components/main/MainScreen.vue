@@ -18,7 +18,6 @@ import WordTable from "./WordTable.vue";
 
 <style scoped>
 .main {
-
   height: 100%;
   width: 100%;
   flex-grow: 1;

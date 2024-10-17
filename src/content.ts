@@ -1,9 +1,9 @@
 // import { getInfo } from "./utils/content.utils";
 import PrimeVue from "primevue/config";
 import Aura from "@primevue/themes/aura";
-import Content from "./Content.vue";
+import ContentButton from "./ContentButton.vue";
 import { createApp } from "vue";
-import ToastService from 'primevue/toastservice';
+import ToastService from "primevue/toastservice";
 
 console.log("Content script loaded!");
 const MAX_ATTEMPTS = 30;
@@ -28,7 +28,7 @@ const mountButton = async () => {
     return;
   }
 
-  const app = createApp(Content);
+  const app = createApp(ContentButton);
   app.use(PrimeVue, {
     theme: {
       preset: Aura,
