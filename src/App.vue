@@ -5,7 +5,3 @@ import MainScreen from "./components/main/MainScreen.vue";
 <template>
   <MainScreen />
 </template>
-
-<style scoped>
-
-</style>

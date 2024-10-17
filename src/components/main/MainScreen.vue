@@ -2,27 +2,7 @@
 import CurrentCount from "./CurrentCount.vue";
 import PealimTitle from "./PealimTitle.vue";
 import Button from "primevue/button";
-import DataTable from "primevue/datatable";
-import Column from "primevue/column";
-import ColumnGroup from "primevue/columngroup"; // optional
-import Row from "primevue/row"; // optional
-import { ref } from "vue";
 import WordTable from "./WordTable.vue";
-
-const customers = ref([
-  {
-    name: "John",
-    country: { name: "USA" },
-    company: "Company A",
-    representative: { name: "John Doe" },
-  },
-  {
-    name: "Jane",
-    country: { name: "Canada" },
-    company: "Company B",
-    representative: { name: "Jane Doe" },
-  },
-]);
 </script>
 
 <template>
@@ -38,7 +18,7 @@ const customers = ref([
 
 <style scoped>
 .main {
-  /* background-color: red; */
+
   height: 100%;
   width: 100%;
   flex-grow: 1;

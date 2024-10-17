@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import CurrentCount from "./CurrentCount.vue";
-import PealimTitle from "./PealimTitle.vue";
-import Button from "primevue/button";
+
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
-import ColumnGroup from "primevue/columngroup"; // optional
-import Row from "primevue/row"; // optional
+
 import { ref } from "vue";
 
 const customers = ref([
