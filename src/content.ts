@@ -1,6 +1,6 @@
 import { ADD_BUTTON_TEXT } from "./const/title.const";
 import { getInfo } from "./utils/content.utils";
-
+import Toastify from "toastify-js";
 const MAX_ATTEMPTS = 30;
 
 const mountButton = async () => {
@@ -22,6 +22,11 @@ const mountButton = async () => {
     console.log("Lead element not found");
     return;
   }
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.type = "text/css";
+  link.href = "https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css";
+  document.head.appendChild(link);
 
   //create a button with the title Copy to clipboard
   const button = document.createElement("button");
@@ -37,10 +42,21 @@ const mountButton = async () => {
   button.style.margin = "10px";
 
   //append the button to the lead element
- 
+
   leadElement.appendChild(button);
   button.addEventListener("click", () => {
     getInfo();
+
+    Toastify({
+      text: "Copied!",
+      duration: 2000,
+      style: {
+        background: "#4CAF50",
+        color: "white",
+        borderRadius: "5px",
+        
+      },
+    }).showToast();
   });
 };
 
