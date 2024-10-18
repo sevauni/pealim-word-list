@@ -1,11 +1,6 @@
-// import { getInfo } from "./utils/content.utils";
-import PrimeVue from "primevue/config";
-import Aura from "@primevue/themes/aura";
-import ContentButton from "./ContentButton.vue";
-import { createApp } from "vue";
-import ToastService from "primevue/toastservice";
+import { ADD_BUTTON_TEXT } from "./const/title.const";
+import { getInfo } from "./utils/content.utils";
 
-console.log("Content script loaded!");
 const MAX_ATTEMPTS = 30;
 
 const mountButton = async () => {
@@ -15,7 +10,7 @@ const mountButton = async () => {
   do {
     attempts++;
     if (attempts > MAX_ATTEMPTS) {
-      console.log("Max attempts reached, aborting");
+      console.warn("Max attempts reached, aborting");
       return;
     }
     leadElement = document.querySelector(".lead");
@@ -28,17 +23,27 @@ const mountButton = async () => {
     return;
   }
 
-  const app = createApp(ContentButton);
-  app.use(PrimeVue, {
-    theme: {
-      preset: Aura,
-    },
-  });
-  app.use(ToastService);
   const appElement = document.createElement("div");
   appElement.id = "app";
   leadElement.appendChild(appElement);
-  app.mount("#app");
+  //create a button with the title Copy to clipboard
+  const button = document.createElement("button");
+  button.innerText = ADD_BUTTON_TEXT;
+  button.id = "copyButton";
+  button.style.backgroundColor = "#4CAF50";
+  button.style.color = "white";
+  button.style.padding = "10px 24px";
+  button.style.fontSize = "16px";
+  button.style.border = "none";
+  button.style.cursor = "pointer";
+  button.style.borderRadius = "5px";
+  button.style.margin = "10px";
+
+  //append the button to the lead element
+  leadElement.appendChild(button);
+  button.addEventListener("click", () => {
+    getInfo();
+  });
 };
 
 //////////////
