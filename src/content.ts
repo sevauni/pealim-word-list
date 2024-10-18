@@ -23,9 +23,6 @@ const mountButton = async () => {
     return;
   }
 
-  const appElement = document.createElement("div");
-  appElement.id = "app";
-  leadElement.appendChild(appElement);
   //create a button with the title Copy to clipboard
   const button = document.createElement("button");
   button.innerText = ADD_BUTTON_TEXT;
@@ -40,6 +37,7 @@ const mountButton = async () => {
   button.style.margin = "10px";
 
   //append the button to the lead element
+ 
   leadElement.appendChild(button);
   button.addEventListener("click", () => {
     getInfo();
